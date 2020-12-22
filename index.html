@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./churrasco.css" />
+    <title>Churrascometro</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Churrascometro</h1>
+
+      <!-- Quando clicar no botão de enviar ele deispara o evento onsubmit, porém ele faz a página recaregar e para evitar que a página recarregue passei o parâmetro event na função e lá ná funcão falor que não é pra recarregar. Outro jeito de evitar que recarregue é substituir o type submit do botão de envio para button  -->
+      <form onsubmit="calcular(event)" id="formChurrascometro">
+        <!-- Sempre que criar um input utilize a tag label por questão de semântica e pra sempre informar a pessoa a que esse campo se refere. Apenas com o placeholder a pessoa pode acabar se perdendo o que é o campo. -->
+        <label for="adultos">Quantidade de adultos</label>
+        <input id="adultos" name="adultos" type="number" />
+
+        <label for="criancas">Quantidade de crianças</label>
+        <input id="criancas" name="criancas" type="number" />
+
+        <label for="duracao">Duração do churrasco (horas)</label>
+        <input id="duracao" name="duracao" type="number" />
+
+        <!-- Se você não colocar um type no botão por padrão ele assume que é do tipo submit, mesmo assim é sempre bom especifciar o tipo dele.  -->
+        <button type="submit">Calcular</button>
+      </form>
+
+      <div id="resultado"></div>
+    </div>
+    <script src="./churrascometro.js"></script>
+  </body>
+</html>
